@@ -31,7 +31,6 @@ export const SignUp = () => {
     setPassword(e.target.value);
   }, []);
 
-	console.log("Rerender");
 	return (
 		<Grid container textAlign='center' spacing={2}>
 			<Grid item xs={12}>

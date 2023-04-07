@@ -18,8 +18,6 @@ export const SignIn = () => {
     setPassword(e.target.value);
   }, []);
 
-	console.log("Rerender");
-
 	const signIn = async () => {
 		try{
 			await signInWithEmailAndPassword(auth, email, password);
