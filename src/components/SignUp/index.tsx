@@ -1,7 +1,7 @@
 import { Grid, TextField, Typography, Button } from "@mui/material";
 import { User, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase-config";
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
@@ -23,11 +23,11 @@ export const SignUp = () => {
 		}
 	}
 
-	const handleChangeEmail = useCallback((e) => {
+	const handleChangeEmail = useCallback((e : ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setEmail(e.target.value);
   }, []);
 
-	const handleChangePassWord = useCallback((e) => {
+	const handleChangePassWord = useCallback((e : ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setPassword(e.target.value);
   }, []);
 
@@ -40,7 +40,7 @@ export const SignUp = () => {
 					<TextField value={email} label='Email' onChange={handleChangeEmail} type="email" />
 			</Grid>
 			<Grid item xs={12}>
-					<TextField value={password} label='Password' onChange={handleChangePassWord} type='password' />
+					<TextField value={password} label='Password' onChange={handleChangePassWord}  type='password' />
 			</Grid>
 			<Grid item xs={12}>
 				<Button variant="outlined" onClick={signUp} >

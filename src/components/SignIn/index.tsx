@@ -1,6 +1,6 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 
@@ -10,11 +10,11 @@ export const SignIn = () => {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
-	const handleChangeEmail = useCallback((e) => {
+	const handleChangeEmail = useCallback((e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setEmail(e.target.value);
   }, []);
 
-	const handleChangePassWord = useCallback((e) => {
+	const handleChangePassWord = useCallback((e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setPassword(e.target.value);
   }, []);
 
