@@ -6,12 +6,12 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "apiKey",
-  authDomain: "authDomain",
-  projectId: "projectId",
-  storageBucket: "storageBucket",
-  messagingSenderId: "messagingSenderId",
-  appId: "appId"
+  apiKey: "AIzaSyBEC9Sf2Qg7bTILvOugLlaiZg4LhGVKLeM",
+  authDomain: "ecommerce-4870e.firebaseapp.com",
+  projectId: "ecommerce-4870e",
+  storageBucket: "ecommerce-4870e.appspot.com",
+  messagingSenderId: "379922350333",
+  appId: "1:379922350333:web:6d8105611c8e3740e57e94"
 };
 
 // Initialize Firebase
