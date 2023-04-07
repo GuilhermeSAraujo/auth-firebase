@@ -13,4 +13,4 @@ Simply run:
 
 ## Deploy
 
-The project is availible on GitHub Pages: ~https://guilhermesaraujo.github.io/auth-firebase/~
+The project is availible on GitHub Pages: https://guilhermesaraujo.github.io/auth-firebase/
