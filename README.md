@@ -1,16 +1,18 @@
 # Firebase Authentication
 
-This project was focused on learning how to use the **Authentication** service provided by Firebase.
+This project focuses on learning how to use the **Authentication** service provided by Firebase.
 
 ## Pages
-It only three pages: sign up, sign in and auth sucess.
+It only has three pages: sign up, sign in, and authentication success.
 
-## Run the code
+## Running the Code
 
-Simply run:
+To run the code, simply execute the following commands:
 `$ npm install`;
 `$ npm run dev`;
 
-## Deploy
+## Deployment
 
-The project is availible on GitHub Pages: https://guilhermesaraujo.github.io/auth-firebase/
+The project is available on GitHub Pages: _https://guilhermesaraujo.github.io/auth-firebase/_
+
+Please let me know if you need any further assistance.
