@@ -6,23 +6,24 @@ import { useNavigate } from "react-router-dom";
 
 export const SignIn = () => {
 	const history = useNavigate();
-	
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
 	const handleChangeEmail = useCallback((e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }, []);
+		setEmail(e.target.value);
+	}, []);
 
 	const handleChangePassWord = useCallback((e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setPassword(e.target.value);
-  }, []);
+		setPassword(e.target.value);
+	}, []);
 
 	const signIn = async () => {
-		try{
-			await signInWithEmailAndPassword(auth, email, password);
+		try {
+			const { user } = await signInWithEmailAndPassword(auth, email, password);
+			const token = await user.getIdToken();
+			sessionStorage.setItem("accessToken", token);
 			history('/home');
-		}catch(err){
+		} catch (err) {
 			if (err instanceof Error) {
 				console.log(err.message);
 			} else {
@@ -34,17 +35,17 @@ export const SignIn = () => {
 	return (
 		<Grid container textAlign='center' spacing={2}>
 			<Grid item xs={12}>
-					<Typography variant='h4'>Sign In</Typography>
+				<Typography variant='h4'>Sign In</Typography>
 			</Grid>
 			<Grid item xs={12}>
-					<TextField value={email} label='Email' onChange={handleChangeEmail} type="email" />
+				<TextField value={email} label='Email' onChange={handleChangeEmail} type="email" />
 			</Grid>
 			<Grid item xs={12}>
-					<TextField value={password} label='Password' onChange={handleChangePassWord} type='password' />
+				<TextField value={password} label='Password' onChange={handleChangePassWord} type='password' />
 			</Grid>
 			<Grid item xs={12}>
 				<Button variant="outlined" onClick={signIn} >
-				Sign In
+					Sign In
 				</Button>
 			</Grid>
 		</Grid>
