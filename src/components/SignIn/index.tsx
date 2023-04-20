@@ -19,9 +19,7 @@ export const SignIn = () => {
 
 	const signIn = async () => {
 		try {
-			const { user } = await signInWithEmailAndPassword(auth, email, password);
-			const token = await user.getIdToken();
-			sessionStorage.setItem("accessToken", token);
+			await signInWithEmailAndPassword(auth, email, password);
 			history('/home');
 		} catch (err) {
 			if (err instanceof Error) {
